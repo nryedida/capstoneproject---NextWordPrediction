@@ -30,11 +30,28 @@ predictNextWord <- function(s) {
     # print(paste("sv = ", sv))
     # length(strsplit(s," ", fixed = TRUE))
     stm <- paste(toMatch,collapse="|")
-    print(paste0("stm before is ", stm))
+    # print(paste0("stm before is ", stm))
     stm <- paste0("^", paste0(stm,"_"))
-    print(paste0("stm after is ", stm))
-    print(head(trifreq[grep(stm,trifreq$feature),1],3))
+    print(paste0("searching trigrams for ", stm))
+    result <<- head(trifreq[grep(stm,trifreq$feature),1],3)
+    print(paste0("class of result = ", result))
+    s <- result$feature
+    # print(paste0("s= ",s))
+    # print(s)
+    pred <- vector(length=2)
+    for (i in 1:length(s)) {
+        sl <- strsplit(s[i],"_")
+        v <- unlist(sl)
+        # print(paste0("v= ",v[length(v)]))
+        pred[i] <- v[length(v)]
+        # len <- length(v)
+        # for (j in len:len-2) {
+        #     print(paste0("j = ", j))
+        #     print(v[j])
+        # }
+    }
+    pred
 }
 
 # predictNextWord("how are you")
-predictNextWord("how are to the")
+print(predictNextWord("how are to the"))
