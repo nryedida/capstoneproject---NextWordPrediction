@@ -13,15 +13,22 @@ initializeSession <- function () {
     }
 }
 
+# predictWords <- function(s) {
+#     #assume we only have trigrams
+#     #get the number of words entered
+#     #if empty string stop
+# 
+#     #call predictNextWord till we have 3 words
+#     while (length(pred) < 3) {
+#         #call predict function with string, ngram(uni, bi or tri), and number of words to predict
+#         #predictNextWords(string, model, n)        
+#     }
+#     #if length is 1, concatenate with _ and search in bigrams
+#     #if length is 2,  concatenate with _ and search in trigrams
+#     #if length > 2 take the last two and search in trigrams 
+# }
+
 predictNextWord <- function(s) {
-    #assume we only have trigrams
-    #get the number of words entered
-    #if empty string stop
-    #if length is 1, concatenate with _ and search in bigrams
-    #if length is 2,  concatenate with _ and search in trigrams
-    #if length > 2 take the last two and search in trigrams 
-    
-    # print(paste("entered string = ", s))
     sl <- strsplit(s," ")
     v <- unlist(sl)
     len <- length(v)
@@ -39,16 +46,23 @@ predictNextWord <- function(s) {
     stm <- paste(toMatch,collapse="|")
     stm <- paste0("^", paste0(stm,"_"))
     # print(paste0("searching trigrams for ", stm))
-    result <<- head(trifreq[grep(stm,trifreq$feature),1],3)
+    result <- head(trifreq[grep(stm,trifreq$feature),1],3)
     # print(paste0("class of result = ", result))
-    s <- result$feature
-    pred <- vector(length=2)
-    for (i in 1:length(s)) {
-        sl <- strsplit(s[i],"_")
-        v <- unlist(sl)
-        pred[i] <- v[length(v)]
+    # s <- result
+    pred <- vector(length=0)
+    if (length(result) > 0) {
+        for (i in 1:length(result)) {
+            sl <- strsplit(result[i],"_")
+            v <- unlist(sl)
+            pred[i] <- v[length(v)]
+        }
+        cat("num predictions", length(pred), sep = "\n")
+        # pred <- cat(pred, sep = "\n")
     }
-    pred <- cat(pred, sep = "\n")
+    pred
+    # else {
+    #     cat("No results", sep = "\n")
+    # }
 }
 
 server <- function(input, output) {
@@ -60,7 +74,7 @@ server <- function(input, output) {
     })
     
     output$nextword <- renderPrint({
-        predictNextWord(x())
+        cat(predictNextWord(x()), sep = "\n")
         # paste0(x(), dim(trifreq))
     })
 }
