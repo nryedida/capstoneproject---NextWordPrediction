@@ -53,12 +53,13 @@ bifreq <- bifreq[bifreq$frequency > 4]
 saveRDS(bifreq, file = "bigram.Rds")
 bifreq <- readRDS("bigram.Rds")
 
+Sys.time() 
 trigrams <- tokens_ngrams(tokens(mycorpus, remove_symbols = TRUE, remove_url = TRUE), n = 3L)
 tridfm <- dfm(trigrams, remove_punct = TRUE)
 trifreq <- textstat_frequency(tridfm)
 rm(trigrams, tridfm)
-trifreq <- textstat_frequency(tridfm)
 trifreq <- trifreq[trifreq$frequency > 4]
+saveRDS(trifreq, file = "trigram.Rds")
 Sys.time() 
 
 
