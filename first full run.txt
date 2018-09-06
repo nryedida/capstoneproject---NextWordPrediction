@@ -1,0 +1,22 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~
+took about 30 min
+in grep both arguments should be lower case ?
+respectable score ?
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Overall top-3 score:     7.71 %
+Overall top-1 precision: 6.10 %
+Overall top-3 precision: 9.04 %
+Average runtime:         67.16 msec
+Number of predictions:   28464
+Total memory used:       113.30 MB
+
+Dataset details
+ Dataset "blogs" (599 lines, 14587 words, hash 14b3c593e543eb8b2932cf00b646ed653e336897a03c82098b725e6e1f9b7aa2)
+  Score: 6.74 %, Top-1 precision: 5.37 %, Top-3 precision: 7.86 %
+ Dataset "tweets" (793 lines, 14071 words, hash 7fa3bf921c393fe7009bc60971b2bb8396414e7602bb4f409bed78c7192c30f4)
+  Score: 8.67 %, Top-1 precision: 6.84 %, Top-3 precision: 10.21 %
+
+
+R version 3.4.4 (2018-03-15), platform x86_64-w64-mingw32/x64 (64-bit)
+Attached non-base packages:   data.table (v1.11.0), digest (v0.6.15), stringi (v1.1.7), quanteda (v1.3.4), readtext (v0.71)
+Unattached non-base packages: Rcpp (v0.12.16), magrittr (v1.5), stopwords (v0.9.0), munsell (v0.4.3), colorspace (v1.3-2), lattice (v0.20-35), R6 (v2.2.2), rlang (v0.2.0), fastmatch (v1.1-0), stringr (v1.3.0), httr (v1.3.1), plyr (v1.8.4), tools (v3.4.4), grid (v3.4.4), gtable (v0.2.0), spacyr (v0.9.91), yaml (v2.1.19), lazyeval (v0.2.1), RcppParallel (v4.4.1), tibble (v1.4.2), Matrix (v1.2-12), ggplot2 (v2.2.1), rsconnect (v0.8.8), compiler (v3.4.4), pillar (v1.2.2), scales (v0.5.0), lubridate (v1.7.4)
