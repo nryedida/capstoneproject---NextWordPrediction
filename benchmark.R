@@ -108,7 +108,7 @@ benchmark <- compiler::cmpfun(function(FUN, ..., sent.list, ext.output=T) {
                                           min(which(FUN(split[1,i], ...)==split[2,i]),4)
                                       })
                        score <- score + sum(4-rank)
-                       print(score)
+                       cat("\nscore =", score)
                        hit.count.top3 <- hit.count.top3 + sum(rank<4)
                        hit.count.top1 <- hit.count.top1 + sum(rank==1)
                    }
@@ -209,59 +209,89 @@ benchmark <- compiler::cmpfun(function(FUN, ..., sent.list, ext.output=T) {
 # As an example, we create a very simple baseline algorithm which always returns
 # the three most frequent English words.
 # predict.baseline <- function(x){c('the', 'on', 'a')}
-predict.baseline <- function(x)
+# predictWords <- function(s)
+predict.baseline <- function(s)
 {
-    #assume we only have trigrams
-    #get the number of words entered
-    #if empty string stop
-    #if length is 1, concatenate with _ and search in bigrams
-    #if length is 2,  concatenate with _ and search in trigrams
-    #if length > 2 take the last two and search in trigrams 
-    
-    # print(paste("entered string = ", s))
-    sl <- strsplit(trimws(x)," ")
+    gramSize <- 3
+    #split given phrase and get vector(v) of strings
+    sl <- strsplit(s," ")
     v <- unlist(sl)
-    len <- length(v)
-    # if(len < 1) stop("Please enter at least a word")
-    # if (len == 1) print(paste("word entered = ", v[1]))
-    # if (len == 2) {
-    #         print("wordss entered are = ")
-    #         print(v)
-    # }
-    # for (i in len:1) {
-    #     if (i>1) print(paste(v[i-1], v[i], sep="_"))
-    # }
-    toMatch <- paste(v[len-1], v[len], sep="_")
-    # print(paste0("toMatch is ", toMatch))
-    # print(sv)
-    # print(paste("length(sv) = ", length(sv)))
-    # print(paste("sv = ", sv))
-    # length(strsplit(s," ", fixed = TRUE))
-    stm <- paste(toMatch,collapse="|")
-    stm <- stri_replace_all_regex(stm, "[^[:alnum:][:space:]_\'\\\\?]", " ")    
-    # print(paste0("stm before is ", stm))
-    stm <- tolower(paste0("^", paste0(stm,"_")))
-    # print(paste0("searching trigrams for ", stm))
-    result <- head(trifreq[grep(stm,trifreq$feature),1],3)
-    # print(paste0("class of result = ", result))
-    s <- result$feature
-    # print(paste0("s= ",s))
-    # print(s)
-    pred <- vector(length=2)
-    for (i in 1:length(s)) {
-        sl <- strsplit(s[i],"_")
-        v <- unlist(sl)
-        # print(paste0("v= ",v[length(v)]))
-        pred[i] <- v[length(v)]
-        # len <- length(v)
-        # for (j in len:len-2) {
-        #     print(paste0("j = ", j))
-        #     print(v[j])
-        # }
+    l <- length(v)
+    predicted <- vector("character", length = 0)
+    if (l > 0) {
+        if (l  <  gramSize) 
+            gramSize <- l+1
+        
+        nWords <- vector("character", length = 0)
+        nPredicted <- 0
+        toMatch <- NULL
+        repeat {
+            #v[l-(gramSize-1)+1] to v[l]
+            # cat("gram size", gramSize)
+            for (i in (l-(gramSize-1)+1):l) {
+                toMatch <- paste(toMatch, paste(v[i], "_", sep = ""), sep="")
+                # cat("toMatch = ", toMatch)
+            }
+            nWords <- predictNextWords(toMatch, gramSize)
+            #     #add these words to predicted to the end
+            if (length(nWords) > 0) {
+                for (i in 1:length(nWords)){
+                    if (nPredicted < 3) {
+                        predicted[nPredicted+1] <- nWords[i]
+                        nPredicted <- nPredicted+1
+                    }
+                }
+            }
+            nWords <- NULL
+            # predicted <- c(predicted, nWords)
+            if (length(predicted) >= 3){
+                # cat("breaking as predicted length>3")
+                break;
+            }
+            else {
+                gramSize <- gramSize - 1
+                toMatch <- NULL
+                # predicted <- c("a", "b", "c")
+            }
+        }
     }
-    pred
-    
+    predicted
 }
+
+predictNextWords <- function(txtTogrep, gramSize) 
+{
+    stm <- paste(txtTogrep,collapse="|")
+    stm <- paste0("^", stm)
+    # print(paste0("searching trigrams for ", stm))
+    
+    if (gramSize == 3) {
+        result <- head(trifreq[grep(stm,trifreq$feature),1],3)[[1]]
+    } else if (gramSize == 2) {
+        result <- head(bifreq[grep(stm,bifreq$feature),1],3)[[1]]
+    } else
+    {
+        result <- head(unifreq[,1],3)[[1]]
+        # cat("from unigrams")
+        # if len(prdct) < 3, add the delta from unigram
+    }
+    
+    pred <- vector(length=0)
+    # cat("class of result = ", class(result))
+    # print(paste0("class of result = ", result))
+    if (length(result) > 0) {
+        # if (length(result) > 0) {
+        for (i in 1:length(result)) {
+            sl <- strsplit(result[i],"_")
+            v <- unlist(sl)
+            pred[i] <- v[length(v)]
+        }
+        # if (gramSize == 3) cat("from tri grams")
+        # if (gramSize == 2) cat("from bi grams")
+    }
+    # cat("\nin predicNextWords, predicted = ", pred)
+    pred
+}
+
 
 
 ################################################################################################
