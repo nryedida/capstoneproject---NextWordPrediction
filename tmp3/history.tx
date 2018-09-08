@@ -1,0 +1,272 @@
+    1  whoami
+    2  who
+    3  vim
+    4  gvim
+    5  man gs
+    6  cd c:;
+    7  cd slf
+    8  ls -l sci*
+    9  gs -sDEVICE=txtwrite -o sc_chat13.txt 'science-CHAP 12.pdf'
+   10  ls *.txt
+   11  vi sc_chat13.txt 
+   12  vim sc_chat13.txt 
+   13  gs -sDEVICE=txtwrite -o sc_chat13.txt 'science-CHAP 13.pdf'
+   14  vim sc_chat13.txt 
+   15  bye
+   16  exit
+   17  X11
+   18  x11
+   19  gvim
+   20  exit
+   21  pwd
+   22  cd c:/ds-cap
+   23  cd final/
+   24  ls -l *.txt
+   25  ls
+   26  cd en_US
+   27  ls
+   28  vi en_US.blogs.txt 
+   29  man grep
+   30  man grep > tmp.txt
+   31  man grep
+   32  grep -F 'but the defense' en*.txt
+   33  vi
+   34  vi
+   35  grep -F 'but the defense' en*.txt | lc
+   36  grep -F 'but the defense' en*.txt | wc
+   37  grep -F 'but the crowd' en*.txt | wc
+   38  grep -F 'but the players' en*.txt | wc
+   39  grep -F 'but the defense*' en*.txt | wc
+   40  grep 'but the defense*' en*.txt | wc
+   41  vi
+   42  git
+   43  exit
+   44  curl
+   45  pwd
+   46  ls
+   47  ls -l
+   48  cd c:\slf\
+   49  ls
+   50  ls *.html
+   51  find
+   52  find | grep 'vim'
+   53  curl --help
+   54  curl --help | grep '0'
+   55  curl -0 https://www.datacamp.com/community/tutorials?page={2,3,4,5}&tag=r-programming -o datacamp-r.html
+   56  curl -0 https://www.datacamp.com/community/tutorials?page={2,3,4,5}&tag=r-programming -0 datacamp-r.html
+   57  ls -l
+   58  curl -0 https://www.datacamp.com/community/tutorials?page=2&tag=r-programming -0 datacamp-r.html
+   59  hist
+   60  history
+   61  curl -0 https://www.datacamp.com/community/tutorials?page=2&tag=r-programming -0 datacamp-r.html
+   62  cls
+   63  clear
+   64  curl -0 https://www.datacamp.com/community/tutorials?page=2&tag=r-programming -o datacamp-r.html
+   65  curl https://www.datacamp.com/community/tutorials?page=2&tag=r-programming -o datacamp-r.html
+   66  curl https://www.datacamp.com/community/tutorials?page=2&tag=r-programming --output datacamp-r.html
+   67  curl https://www.datacamp.com/community/tutorials?page=2&tag=r-programming > datacamp-r.html [B
+   68  curl https://www.datacamp.com/community/tutorials?page=2&tag=r-programming >> datacamp-r.html
+   69  curl 'https://www.datacamp.com/community/tutorials?page=2&tag=r-programming' -o t.html
+   70  curl 'https://www.datacamp.com/community/tutorials?page={2,3,4,5}&tag=r-programming' -o datacamp-r-tut.html
+   71  curl 'https://www.datacamp.com/community/tutorials?page={2,3,4,5}&tag=r-programming' -0 datacamp-r-tut.html
+   72  curl 'https://www.datacamp.com/community/tutorials?page={2,3,4,5}&tag=r-programming' -o datacamp-r-tutorials.html [B
+   73  cd C:\Users\nagesh\AppData\Roaming\Moonchild Productions\Pale Moon\Profiles\8mx10nri.default\ScrapBook\data
+   74  cd C:/Users/nagesh/AppData/Roaming/Moonchild Productions/Pale Moon/Profiles/8mx10nri.default/ScrapBook/data/20180829110402/
+   75  cd 'C:/Users/nagesh/AppData/Roaming/Moonchild Productions/Pale Moon/Profiles/8mx10nri.default/ScrapBook/data/20180829110402/
+   76  '
+   77  cd 'C:/Users/nagesh/AppData/Roaming/Moonchild Productions/Pale Moon/Profiles/8mx10nri.default/ScrapBook/data/20180829110402/'
+   78  grep 'tutorial' index.html
+   79  grep '/tutorials/' index.html
+   80  grep '\/tutorials\/' index.html
+   81  grep '\/tutorials\/' -F index.html
+   82  grep '/etc/[Btutorials/' -F index.html
+   83  exit
+   84  cd c:/ds-rprog
+   85  find 'stop' -name *.R
+   86  find . 'stop' -name *.R
+   87  find ./*.R 'stop'
+   88  grep 'stop' cachematrix.R 
+   89  grep 'stop' -F cachematrix.R 
+   90  grep -rnw ./*.R 'stop' 
+   91  grep -rnw ./*.R /stop/
+   92  grep -rnw ./*.R -e 'stop' 
+   93  grep -rnw ./*.R -e 'Stop' 
+   94  cd ..
+   95  grep -rnw ./*.R -e 'Stop' 
+   96  grep -rnw . -e 'Stop' 
+   97  find . -type f -name *.R -exec grep -l "stop" {} \;
+   98  cd c:/slf
+   99  history | grep 'gs'
+  100  gs -sDEVICE=txtwrite -o democracyAndDiversity.txt 'Chapter 3 Democracy and Diversity.pdf' 
+  101  vi democracyAndDiversity.txt 
+  102  cd 'C:/Users/nagesh/AppData/Roaming/Moonchild%20Productions/Pale%20Moon/Profiles/8mx10nri.default/ScrapBook/data/20180815134055/usr_40.html'
+  103  cd 'C:/Users/nagesh/AppData/Roaming/Moonchild%20Productions/Pale%20Moon/Profiles/8mx10nri.default/ScrapBook/data/20180815134055/'[B[B
+  104  cd 'C:/Users/nagesh/AppData/Roaming/Moonchild Productions/Pale Moon/Profiles/8mx10nri.default/ScrapBook/data/20180815134055/usr_40.html'
+  105  cd 'C:/Users/nagesh/AppData/Roaming/Moonchild Productions/Pale Moon/Profiles/8mx10nri.default/ScrapBook/data/20180815134055/'
+  106  grep -rnw 'macro'
+  107  grep -rnw 'record'
+  108  exit
+  109  cd c:/ds-cap
+  110  cd final/sn_US
+  111  cd ./final/sn_US
+  112  cd /final/sn_US
+  113  cd /final/en_US
+  114  cd final/en_US
+  115  ls
+  116  grep -rnw *.txt | grep 'are you doing'
+  117  grep -rnw *.txt | grep 'you doing'
+  118  grep -rnw . | grep 'you doing'
+  119  grep -rnw . | grep 'are you doing' > tmp.txt
+  120  grep -rnw . | grep 'are you doing' | wc -l
+  121  grep -rnw . | grep 'are you doing ?' | wc -l
+  122  grep -rnw . | grep 'are you doing?' | wc -l
+  123  time grep -rnw . | grep 'are you doing?' | wc -l
+  124  time grep -rnw . | grep 'sly' | wc -l
+  125  time grep -rnw . | grep ' sly ' | wc -l
+  126  time grep -rnw . | grep ' sly ' > [A
+  127  time grep -rnw . 'are you doing?' | wc -l
+  128  time grep -rnw . 'are you doing ?' | wc -l
+  129  time grep -rnw ./*.txt 'are you doing ?' | wc -l
+  130  time grep -rnw ./*.txt 'are you doing' | wc -l
+  131  time grep -rnw ./*.txt -e 'are you doing' | wc -l
+  132  time grep -rnw ./*.txt -e ' sly ' | wc -l
+  133  time grep -rnw ./*.txt -e 'how are you doing for' | wc -l
+  134  time grep -rnw ./*.txt -e 'how are you doing today' | wc -l
+  135  time grep -rnw ./*.txt -e 'how are you doing for' | wc -l
+  136  ls -l
+  137  time grep -rnw en_US.blogs.txt -e 'how are you doing for' | wc -l
+  138  time grep -rnw en_US.twitter.txt -e 'how are you doing for' | wc -l
+  139  time grep -rnw en_US.twitter.txt -e 'how are you doing today' | wc -l
+  140  time grep -rnw en_US.blogs.txt -e 'how are you doing today' | wc -l
+  141  time grep -rnw en_US.news.txt -e 'how are you doing today' | wc -l
+  142  ls
+  143  time grep -rnw ./*.txt -e 'Paris in' | wc -l
+  144  time grep -rnw ./*.txt -e 'Paris in' | grep 'Versaille'
+  145  ash --help
+  146  ash
+  147  ash /help
+  148  ash -help
+  149  ash --help
+  150  find ./ds-* -newermt $(date +%Y-%m-%d -d '7 day ago') -type f -name *.txt -print
+  151  ls
+  152  cd c:/
+  153  find en_US.[B./ds-* -newermt $(date +%Y-%m-%d -d '7 day ago') -type f -name *.txt -print
+  154  find ./ds-* -newermt $(date +%Y-%m-%d -d '7 day ago') -type f -name *.txt -print
+  155  time grep -rnw ./*.R -e '0028' | wc -l
+  156  time grep -rnw . -e '0028' | wc -l
+  157  cd ds-cap/
+  158  time grep -rnw . -e '0028' | wc -l
+  159  time grep -rnw . -e '0028'
+  160  grep -rnw ./ds-* --include=\*{R,Rmd} -e '002'
+  161  cd ..
+  162  grep -rnw ./ds-* --include=\*{R,Rmd} -e '002'
+  163  grep -rnw ./ds-* --include=\*{R,Rmd} -e '\u00'
+  164  cd c:/mycode
+  165  grep -rnw ./ds-* --include=\*{R,Rmd} -e '\u00'
+  166  grep -rnw . --include=\*{R,Rmd} -e '\u00'
+  167  grep -rnw ./* --include=\*{R,Rmd} -e '\u00'
+  168  find / -type f -name *.R -exec grep -l "\\u" {} \;
+  169  find ./ -type f -name *.R -exec grep -l "\\u" {} \;
+  170  find ./ -type f -name *.R -exec grep -l "cat(" {} \;
+  171  cd ..
+  172  find ./ds-cap/ -type f -name *.R -exec grep -l "cat(" {} \;
+  173  cd c:/ds-cap/src/
+  174  cd capstoneproject/
+  175  ls -l *.Rds
+  176  find . -type f -name *.R -exec grep -l "merge" {} \;
+  177  find ./ -type f -name *.R -exec grep -l "merge" {} \;
+  178  find . -type f -name *.R -exec grep -l "merge" {} \;
+  179  find ./ -type f -name *.R -exec grep -l "merge" {} \;
+  180  find ./*.R -type f -name *.R -exec grep -l "merge" {} \;
+  181  cd ..
+  182  find ./cap* -type f -name *.R -exec grep -l "merge" {} \;
+  183  find -type f -name *.R -exec grep -l "merge" {} \;
+  184  find ./ -type f -name *.R -exec grep -l "cat(" {} \;
+  185  find . -type f -name *.R -exec grep -l "cat(" {} \;
+  186  find -type f -name *.R -exec grep -l "cat(" {} \;
+  187  find ./ -type f -name *.R -exec grep -l "cat(" {} \;
+  188  find . -type f -name *.R -exec grep -l "cat(" {} \;
+  189  cd ..
+  190  cd tmp
+  191  cd src
+  192  cd capstoneproject/
+  193  cd tmp
+  194  ls
+  195  cd tmo
+  196  cd tmp
+  197  cd tmp
+  198  grep -rnw ./*.txt -e 'of the'
+  199  grep -rnw ./*.txt -e 'of the' | wc -l
+  200  grep -rnw ./*.txt -e 'in the' | wc -l
+  201  grep -rnw ./*.txt -e 'for the' | wc -l
+  202  grep -rnw ./*.txt -e 'to the' | wc -l
+  203  split
+  204  man split
+  205  cd ..
+  206  exit
+  207  cd C:/ds-cap/src/capstoneproject/tmp2
+  208  ls sampl*
+  209  split -n3 samplenews.txt
+  210  ls sampl*
+  211  split -n3 samplenews.txt t
+  212  split -n3 sampletweets.txt t
+  213  split -n3 sampleblogs.txt b
+  214  ls
+  215  ls -C
+  216  ls -c
+  217  ls -l
+  218  cd /c
+  219  cd /ds-cap/
+  220  cd /cygdrive/c/ds-cap/benchmark-data
+  221  cd data
+  222  ls
+  223  grep -rnw *.txt "Cha"
+  224  grep -rnw *.txt -e "Cha"
+  225  grep -rnw *.txt -e "ha"
+  226  grep -rnw . -e "ha"
+  227  grep -rnw *.txt -e 'Cha'
+  228  grep -rnw *.txt -e 'lleng'
+  229  grep -rnw ./*.txt -e 'lleng'
+  230  grep -rnw ./*.txt -e 'llenge'
+  231  grep -rnw ./ -e 'llenge'
+  232  find ./ds-cap/ -type f -name *.R -exec grep -l "Chal" {} \;
+  233  find . -type f -name *.R -exec grep -l "Chal" {} \;
+  234  find . -type f -name *.txt -exec grep -l "Chal" {} \;
+  235  find . -type f -name *.txt -exec grep -l "Chal" {} \;
+  236  find -type f -name *.txt -exec grep -l "lleng" {} \;
+  237  find . -type f -name *.txt -exec grep -l "lleng" {} \;
+  238  find . -type f -name *.txt -exec grep -l "and" {} \;
+  239  find -type f -name *.txt -exec grep -l "and" {} \;
+  240  find ./ -type f -name *.txt -exec grep -l "and" {} \;
+  241  find -name '*.txt' -exec grep -l "Chal" {} \;
+  242  vi tweets.txt
+  243  cd ../..
+  244  find -name '10pc.*' {} \;
+  245  find -name '10pc.*'
+  246  find . -name '10pc.*'
+  247  cd final/tmp
+  248  grep -rnw ./ --include=\*{txt} -e 'you doing' | wc -l
+  249  grep -rnw ./*.txt -e 'you doing' | wc -l
+  250  ls
+  251  ls -l
+  252  cd ..
+  253  grep -rnw ./*.txt -e 'you doing' | wc -l
+  254  ls
+  255  cd en_US
+  256  grep -rnw ./*.txt -e 'you doing' | wc -l
+  257  grep -rnw ./*.txt -e 'you doing to' | wc -l
+  258  grep -rnw ./*.txt -e 'you doing today' | wc -l
+  259  grep -rnw ./*.txt -e 'you doing this' | wc -l
+  260  grep -rnw ./*.txt -e 'you doing to ' | wc -l
+  261  grep -rnw ./*.txt -e 'you doing ton' | wc -l
+  262  grep -rnw ./*.txt -e 'you doing tonight' | wc -l
+  263  grep -rnw ./*.txt -e 'you doing' | wc -l
+  264  grep -rnw ./*.txt -e 'you doing[tif]' | wc -l
+  265  grep -rnw ./*.txt -e 'you doing\[tif\]' | wc -l
+  266  grep 'you doing \tif]' *.txt | wc -l
+  267  grep 'you doing [tif]' *.txt | wc -l
+  268  grep 'you doing [^tif]' *.txt | wc -l
+  269  grep 'you doing ' *.txt | wc -l
+  270  cd ../../src/capstoneproject/tmp3
+  271  vi .history
+  272  history > history.tx
