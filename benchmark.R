@@ -212,7 +212,8 @@ benchmark <- compiler::cmpfun(function(FUN, ..., sent.list, ext.output=T) {
 # predictWords <- function(s)
 predict.baseline <- function(s)
 {
-    gramSize <- 3
+    gramSize <- 5
+    s <- stri_replace_all_regex(s, "[^[:alnum:][:space:]\'\\\\?]", " ")
     #split given phrase and get vector(v) of strings
     sl <- strsplit(s," ")
     v <- unlist(sl)
@@ -264,11 +265,23 @@ predictNextWords <- function(txtTogrep, gramSize)
     stm <- paste0("^", stm)
     # print(paste0("searching trigrams for ", stm))
     
-    if (gramSize == 3) {
-        result <- head(trifreq[grep(stm,trifreq$feature),1],3)[[1]]
-    } else if (gramSize == 2) {
-        result <- head(bifreq[grep(stm,bifreq$feature),1],3)[[1]]
-    } else
+    if (gramSize == 5) {
+        result <- head(pentafreq[grep(stm,pentafreq$feature),][order(-frequency)],3)
+        result <- result[[1]]
+    } 
+    else if (gramSize == 4) {
+        result <- head(quadfreq[grep(stm,quadfreq$feature),][order(-frequency)],3)
+        result <- result[[1]]
+    } 
+    else if (gramSize == 3) {
+        result <- head(trifreq[grep(stm,trifreq$feature),][order(-frequency)],3)
+        result <- result[[1]]
+    } 
+    else if (gramSize == 2) {
+        result <- head(bifreq[grep(stm,bifreq$feature),][order(-frequency)],3)
+        result <- result[[1]]
+    } 
+    else
     {
         result <- head(unifreq[,1],3)[[1]]
         # cat("from unigrams")
@@ -299,8 +312,8 @@ predictNextWords <- function(txtTogrep, gramSize)
 # 04. Perform the benchmark
 #
 ################################################################################################
-benchmark(predict.baseline, 
+benchmark(predict.baseline,
           # additional parameters to be passed to the prediction function can be inserted here
-          sent.list = list('tweets' = tweets, 
-                           'blogs' = blogs), 
+          sent.list = list('tweets' = tweets,
+                           'blogs' = blogs),
           ext.output = T)
