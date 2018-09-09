@@ -112,7 +112,8 @@ predictNextWords <- function(txtTogrep, gramSize)
     } 
     else
     {
-        result <- head(unifreq[,1],3)[[1]]
+        result <- head(unifreq[,][order(-frequency)],3)
+        result <- result[[1]]
         # cat("from unigrams")
         # if len(prdct) < 3, add the delta from unigram
     }
@@ -139,7 +140,7 @@ server <- function(input, output) {
     initializeSession()
     
     x <- eventReactive(input$go, {
-        input$caption
+        tolower(input$caption)
     })
     
     output$nextword <- renderPrint({
