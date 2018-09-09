@@ -237,6 +237,8 @@ predict.baseline <- function(s)
             #     #add these words to predicted to the end
             if (length(nWords) > 0) {
                 for (i in 1:length(nWords)){
+                    if (length(predicted) > 0 & nWords[i] %in% predicted)
+                        next
                     if (nPredicted < 3) {
                         predicted[nPredicted+1] <- nWords[i]
                         nPredicted <- nPredicted+1
