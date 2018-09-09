@@ -84,6 +84,7 @@ predictWords <- function(s)
             }
         }
     }
+    else predicted <- c("\" \"")
     predicted
 }
 
@@ -143,7 +144,7 @@ server <- function(input, output) {
     
     output$nextword <- renderPrint({
         # ptm <- proc.time()
-        cat(predictWords(x()), sep = "\n")
+        cat(predictWords(x())[1], sep = "\n")
         # print(proc.time()-ptm)
         # paste0(x(), dim(trifreq))
     })
